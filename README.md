@@ -236,7 +236,12 @@ The API is now running at **`http://localhost:8080`** 🎉
 
 **DELETE** `/users/:id`
 
-**Response:** `204 No Content`
+**Response:** `200 No OK`
+```
+{
+"id": 1,
+"User Deleted Successfully!"
+}
 
 ---
 
