@@ -33,6 +33,7 @@ A simple REST API built using Go to manage users with name and date of birth (DO
 /config/
 /db/
   ├── migrations/
+  ├── queries/  
   └── sqlc/               # SQLC generated code
 /internal/
   ├── handler/            # HTTP handlers
@@ -100,7 +101,7 @@ docker run --name postgres-userdb \
   -e POSTGRES_PASSWORD=postgres \
   -e POSTGRES_DB=usersdb \
   -p 5432:5432 \
-  -d postgres:15-alpine
+  -d postgres:15
 ```
 
 **Verify the database is running:**
@@ -282,11 +283,7 @@ sqlc generate
 migrate create -ext sql -dir db/migrations -seq migration_name
 ```
 
-### Run Tests
 
-```bash
-go test ./...
-```
 
 ---
 
@@ -329,7 +326,6 @@ kill -9 <PID>
 
 ```bash
 go get github.com/gofiber/fiber/v2
-go get github.com/lib/pq
 go get github.com/go-playground/validator/v10
 go get go.uber.org/zap
 ```
@@ -344,13 +340,6 @@ go get go.uber.org/zap
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
----
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
----
 
 ## 👤 Author
 
